@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 
         //$question = Question::factory(10)->create();
 
-        User::factory(3)->create()->each(function($u) {
+        User::factory(5)->create()->each(function($u) {
             $u->questions()
             ->saveMany(
                 Question::factory(rand(1,5))->make()
