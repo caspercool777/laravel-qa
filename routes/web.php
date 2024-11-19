@@ -11,7 +11,10 @@ Auth::routes();
 //Route::resources()
 //Route::resource('questions', 'QuestionsController');
 Route::get('/questions', [QuestionsController::class, 'index'])->name('questions.index');
+Route::get('/questions/create', [QuestionsController::class, 'create'])->name('questions.create');
+Route::post('/questions/store', [QuestionsController::class, 'store'])->name('questions.store');
+Route::get('/questions/{question}', [QuestionsController::class, 'show'])->name('questions.show');
 
-Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
